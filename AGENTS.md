@@ -1,4 +1,4 @@
-# AGENTS.md — Autonomous Perception System (APS)
+# AGENTS.md — monocular-fcw-kitti
 
 Auto-loaded every session. This file is the operative context: scope, hard rules, commands, current status. Deep detail lives in the docs — read them on demand, don't guess:
 

@@ -1,4 +1,11 @@
-# Autonomous Perception System (APS)
+# monocular-fcw-kitti
+
+**TL;DR**
+- Camera-only forward-collision warning on KITTI raw drives: detection, tracking, monocular range, TTC, and an FCW / AEB-request decision. Offline and open-loop. LiDAR is used only as ground truth, never in the estimator.
+- The LiDAR ground truth itself was measured first: MAE 0.25 m on val and 0.27 m on the held-out test split ([Row 9.1](docs/benchmarks.md#row-91--the-ground-truth-ruler-transfers)).
+- The range envelope declared on val, 10–30 m at ≤15% MAPE, failed on held-out test: 17.2% at 10–20 m and 15.6% at 20–30 m ([Row 9.3](docs/benchmarks.md#row-93--the-held-out-result-as-frozen--the-headline)).
+- After fixing the cause (an ungated pole in the contact-point geometry), the envelope that holds on both splits is 20–50 m at ≤13% MAPE. 10–20 m is marginal (10.1% val, 15.8% test), and those post-fix test numbers are not clean held-out evidence ([Row 9.7](docs/benchmarks.md#row-97--the-defect-an-ungated-pole-and-what-closing-it-costs)).
+- FCW true-positive rate and false alarms per hour are not published: val holds 2 threat events below TTC 2 s, too few for a rate ([Row 7.1](docs/benchmarks.md#row-71--the-headline-is-that-the-data-cannot-support-the-metric)).
 
 A **monocular** vision perception and forward-collision-warning stack, evaluated
 against LiDAR ground truth before anything is claimed about it.
@@ -538,7 +545,7 @@ collision-warning system most needs to be right.
 Two ways, and the difference matters.
 
 **The published page** at
-[zura16.github.io/Autonomous-Perception-System](https://zura16.github.io/Autonomous-Perception-System/)
+[zura16.github.io/monocular-fcw-kitti](https://zura16.github.io/monocular-fcw-kitti/)
 plays a pre-rendered clip: 110 frames of real pipeline output, scrubable, with
 per-frame telemetry. It is static by necessity — GitHub Pages serves files, not
 processes — and it never probes for a backend.

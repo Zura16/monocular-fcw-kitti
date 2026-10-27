@@ -14,7 +14,6 @@ This system processes camera video inputs to detect driving-relevant objects (ve
 4. **Lane Line Detection**: Performs perspective warp (bird's-eye view), HLS color thresholding, sliding window searching, second-order polynomial curve fitting, and offset tracking.
 5. **Safety Decision Layer**: Estimates closing speed relative velocities, evaluates Time-to-Collision (TTC) to trigger emergency braking (`BRAKE`), and checks vehicle deviation to trigger Lane Departure Warnings (`WARN`).
 6. **Telemetry HUD Overlay**: Draws real-time vehicle tracks, lane overlays, and a dashboard panel summarizing system alerts.
-7. **Release Scheduler**: Integrates a staging compiler (`commit_scheduler.py`) to commit and push the codebase in daily increments of approximately 15% to maintain a gradual commit log.
 
 ---
 
@@ -27,7 +26,6 @@ Autonomous Perception System/
 ├── config.py                    # Configurations & camera matrix calibration
 ├── generate_synthetic_video.py  # Generates synthetic test video data
 ├── main.py                      # Main orchestrator pipeline
-├── commit_scheduler.py          # Daily commit scheduler
 ├── commit_state.json            # Scheduler tracking file
 ├── README.md                    # Project documentation
 ├── src/                         # Pipeline implementation package
