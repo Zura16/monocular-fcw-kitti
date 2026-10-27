@@ -1,4 +1,4 @@
-/* Autonomous Perception System — static evidence page.
+/* monocular-fcw-kitti — static evidence page.
  *
  * This file used to be a client for a Flask backend at 127.0.0.1:5000, with
  * play/pause/stop controls, a "radar" obstacle spawner and a MiDaS depth

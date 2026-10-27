@@ -1,4 +1,4 @@
-# CLAUDE.md — Autonomous Perception System (APS)
+# CLAUDE.md — monocular-fcw-kitti
 
 Auto-loaded every session. This file is the operative context: scope, hard rules, commands, current status. Deep detail lives in the docs — read them on demand, don't guess:
 
@@ -71,6 +71,8 @@ While the override stands, `/quiz` is **load-bearing rather than optional**, and
 12. **Claims are generated, never authored.** `docs/claims.md` rows are written *from* `benchmarks.md`, each pinned to a commit hash.
 13. **Scope language is fixed.** "Monocular." "Warning and AEB request." "Offline, open-loop." Never "sensor fusion," never "commands braking," never "real-time" without a named budget.
 14. **Ground truth is never assumed valid.** Every GT value carries a tier and a coverage figure. A box you cannot see into has **no** ground truth — abstaining is required, filling it in is a fabricated measurement. *(Measured: a naive estimator on fully-occluded boxes reports the occluder, MAE 11.9 m — [D-010](docs/decisions.md).)*
+15. **Never rewrite git history or force-push without asking the author first.**
+16. **No dependency, framework or tool goes in the README unless the code imports and uses it.**
 
 ## Conventions
 
